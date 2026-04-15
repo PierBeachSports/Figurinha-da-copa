@@ -1,4 +1,3 @@
-/* 🔥 BASE */
 * { box-sizing: border-box; }
 
 html, body {
@@ -10,9 +9,8 @@ html, body {
   background: #ffffff;
 }
 
-/* TELAS */
 #intro, #introtext, #precamera, #conteudotext {
-  display: none; /* Controlado pelo JS */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -22,12 +20,11 @@ html, body {
   align-items: center;
 }
 
-/* 🎬 INTRO (Mantido como você pediu) */
 #intro { display: flex; z-index: 3; }
 #intro video { width: 100%; height: 100%; object-fit: fill; }
 
-/* 📝 TEXTO INTRO */
 #introtext { flex-direction: column; }
+
 #textoIntro p {
   font-size: 28px;
   color: #272791;
@@ -36,41 +33,60 @@ html, body {
   animation: aparecerTexto 1s forwards;
   text-align: center;
 }
+
 #textoIntro p:nth-child(1) { animation-delay: 0.5s; }
 #textoIntro p:nth-child(2) { animation-delay: 2s; }
 #textoIntro p:nth-child(3) { animation-delay: 3.5s; }
 #textoIntro p:nth-child(4) { animation-delay: 5s; }
 
-@keyframes aparecerTexto { to { opacity: 1; transform: translateY(0); } }
+@keyframes aparecerTexto {
+  to { opacity: 1; transform: translateY(0); }
+}
 
-/* 📄 INSTRUÇÕES */
 #precamera { background: #f8f9ff; }
+
 #boxInstrucao {
-  background: white; padding: 25px; border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  width: 92%; max-width: 450px; text-align: center;
-}
-#TextInstrucao { list-style: none; padding: 0; }
-#TextInstrucao li {
-  background: #f5f6ff; margin: 10px 0; padding: 15px;
-  border-radius: 12px; color: #272791; font-size: 16px;
-}
-#irCamera {
-  width: 100%; padding: 16px; border: none; border-radius: 12px;
-  background: #272791; color: white; font-size: 18px;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 92%;
+  max-width: 450px;
+  text-align: center;
 }
 
-/* 📸 CONTEÚDO CÂMERA (Ajustado para não cobrir tudo) */
-#conteudotext { 
-  flex-direction: column; 
-  background: #ffffff; 
+#TextInstrucao {
+  list-style: none;
+  padding: 0;
+}
+
+#TextInstrucao li {
+  background: #f5f6ff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 12px;
+  color: #272791;
+}
+
+#irCamera {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #272791;
+  color: white;
+  font-size: 18px;
+}
+
+#conteudotext {
+  flex-direction: column;
+  background: #ffffff;
   padding: 20px;
 }
 
 #camera-container {
   width: 100%;
-  max-width: 380px; /* Limita a largura no PC e Celular */
-  aspect-ratio: 9 / 16; /* Mantém o formato de celular */
+  max-width: 380px;
+  aspect-ratio: 9 / 16;
   background: #000;
   position: relative;
   overflow: hidden;
@@ -78,43 +94,49 @@ html, body {
   border: 2px solid #272791;
 }
 
-#camera { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; /* Faz o vídeo preencher o container sem distorcer */
+#camera {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #overlay {
-  position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   object-fit: contain;
 }
 
 #capture {
-  position: absolute; bottom: 20px; left: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
   transform: translateX(-50%);
-  width: 70px; height: 70px;
-  border-radius: 50%; background: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
   border: 5px solid #272791;
 }
 
 #voltarInstrucao {
-  position: absolute; top: 15px; left: 15px;
-  padding: 8px 15px; background: #272791;
-  color: white; border: none; border-radius: 8px;
-  z-index: 10;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #272791;
+  color: white;
+  border: none;
+  padding: 8px;
 }
 
-/* FOTO FINAL */
 #fotoFinal {
   display: none;
   width: 100%;
   max-width: 380px;
-  aspect-ratio: 9 / 16;
-  object-fit: contain;
   border-radius: 20px;
-  background: #000;
 }
 
 #canvas { display: none; }
@@ -122,8 +144,60 @@ html, body {
 #voltar {
   display: none;
   margin-top: 15px;
-  width: 90%; max-width: 380px;
-  padding: 15px; background: #272791;
-  color: white; border-radius: 12px;
-  border: none; font-size: 16px;
+  padding: 15px;
+  background: #272791;
+  color: white;
+  border: none;
+}
+
+/* ✅ MENSAGENS */
+#mensagemFinal {
+  display: none;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #272791;
+  text-align: center;
+  font-weight: bold;
+}
+
+#mensagemInstrucao {
+  display: none;
+  margin-top: 5px;
+  font-size: 15px;
+  color: #555;
+  text-align: center;
+}
+
+/* 🔄 LOADING */
+#loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ddd;
+  border-top: 5px solid #272791;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  100% { transform: rotate(360deg); }
+}
+
+#loading p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #272791;
 }
