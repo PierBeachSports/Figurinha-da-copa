@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Foto Pier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="intro">
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="intro.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div id="introtext">
+  <div id="textoIntro">
+    <p>O maior torneio da história do Pier</p>
+    <p>Você está quase confirmado</p>
+    <p>Seu rosto está prestes a entrar</p>
+    <p>Para a história do Pier</p>
+  </div>
+</div>
+
+<div id="precamera">
+  <div id="boxInstrucao">
+    <h1 id="TituloInstrucao">Prepare-se para a foto</h1>
+    <ul id="TextInstrucao">
+      <li>Ambiente bem iluminado</li>
+      <li>Use a câmera frontal</li>
+      <li>Camiseta branca</li>
+      <li>Sem gestos com as mãos</li>
+      <li>Foto do umbigo para cima</li>
+      <li>Use a silhueta para se alinhar</li>
+    </ul>
+    <button id="irCamera">Abrir câmera</button>
+  </div>
+</div>
+
+<div id="conteudotext">
+  <div id="camera-container">
+    <video id="camera" autoplay playsinline></video>
+    <img id="overlay" src="overlay.png">
+    <button id="capture"></button>
+    <button id="voltarInstrucao">Voltar</button>
+  </div>
+
+  <img id="fotoFinal" />
+
+  <canvas id="canvas"></canvas>
+
+  <button id="voltar">Tirar outra foto</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
