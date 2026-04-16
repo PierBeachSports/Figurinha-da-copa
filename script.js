@@ -19,6 +19,7 @@ const mensagemFinal = document.getElementById("mensagemFinal");
 const mensagemInstrucao = document.getElementById("mensagemInstrucao");
 
 let streamAtual = null;
+let facingModeAtual = "user";
 
 function mostrarTela(tela) {
     intro.style.display = "none";
@@ -37,12 +38,18 @@ videoIntro.addEventListener("ended", () => {
 
 async function abrirCamera() {
     try {
+        if (streamAtual) {
+            streamAtual.getTracks().forEach(t => t.stop());
+        }
+
         const stream = await navigator.mediaDevices.getUserMedia({
-            video: { facingMode: "user" },
+            video: { facingMode: facingModeAtual },
             audio: false
         });
+
         streamAtual = stream;
         video2.srcObject = stream;
+
     } catch (err) {
         alert("Erro ao acessar câmera: " + err.message);
         console.error(err);
@@ -109,4 +116,10 @@ voltarInstrucao.addEventListener("click", () => {
         streamAtual.getTracks().forEach(t => t.stop());
     }
     mostrarTela(precamera);
+});
+const btnTrocar = document.getElementById("trocarCamera");
+
+btnTrocar.addEventListener("click", () => {
+    facingModeAtual = facingModeAtual === "user" ? "environment" : "user";
+    abrirCamera();
 });
