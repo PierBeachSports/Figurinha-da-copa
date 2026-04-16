@@ -152,7 +152,7 @@ html, body {
 
 /* ✅ MENSAGENS */
 #mensagemFinal {
-  display: none;
+  
   margin-top: 10px;
   font-size: 18px;
   color: #272791;
@@ -161,7 +161,7 @@ html, body {
 }
 
 #mensagemInstrucao {
-  display: none;
+
   margin-top: 5px;
   font-size: 15px;
   color: #555;
@@ -200,4 +200,76 @@ html, body {
   margin-top: 15px;
   font-size: 18px;
   color: #272791;
+}
+/* 🔥 RESULTADO BONITO */
+#resultadoBox {
+  display: none;
+  background: #f8f9ff;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  animation: aparecerBox 0.5s ease;
+}
+
+@keyframes aparecerBox {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#iconeSucesso {
+  width: 60px;
+  height: 60px;
+  background: #27ae60;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+#mensagemFinal {
+  font-size: 20px;
+  color: #272791;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#mensagemInstrucao {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* BOTÃO MAIS BONITO */
+#voltar {
+  display: none;
+  margin-top: 20px;
+  padding: 15px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #272791, #3f3fc9);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#voltar:hover {
+  transform: scale(1.05); 
+  opacity: 0.95;
 }
