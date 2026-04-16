@@ -84,8 +84,7 @@ btn.addEventListener("click", () => {
             foto.style.display = "block";
             voltar.style.display = "block";
 
-            mensagemFinal.style.display = "block";
-            mensagemInstrucao.style.display = "block";
+        document.getElementById("resultadoBox").style.display = "block";
         })
         .catch(err => {
             console.error(err);
@@ -98,8 +97,7 @@ btn.addEventListener("click", () => {
 voltar.addEventListener("click", () => {
     foto.style.display = "none";
     voltar.style.display = "none";
-    mensagemFinal.style.display = "none";
-    mensagemInstrucao.style.display = "none";
+    document.getElementById("resultadoBox").style.display = "none";
     loading.style.display = "none";
 
     cameraContainer.style.display = "block";
